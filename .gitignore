@@ -186,16 +186,4 @@ sample-patients.sql
 # Keep safe test templates
 !database/sample-data-template.sql
 
-##########################
-# DOCUMENTATION (Keep old README)
-##########################
-
-# Old README (we have new one)
-README.md
-
-# Keep new documentation
-!README-NEW.md
-!PROJECT-DOCUMENTATION.md
-!CALCULATION-LOGIC.md
-!GITHUB-SETUP-GUIDE.md
-!DEPLOYMENT-GUIDE.md
+# Keep all documentation files tracked
