@@ -1,0 +1,201 @@
+##########################
+# .NET / ASP.NET BACKEND
+##########################
+
+# Build Results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio Files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# Web Publish Profiles
+PublishProfiles/
+*.pubxml
+*.publishproj
+
+##########################
+# ANGULAR FRONTEND
+##########################
+
+# Node Modules (HUGE - Don't Upload!)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Angular Build Output
+dist/
+tmp/
+out-tsc/
+
+# Angular Cache
+.angular/
+*.angular/
+cache/
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+##########################
+# DATABASE FILES
+##########################
+
+# SQL Server Database Files  
+*.mdf
+*.ldf
+*.ndf
+
+# Database Backups (TOO LARGE)
+*.bak
+*.sql.bak
+tpnbackup
+TPNDatabase-Backup.sql
+
+# Keep schema files (lightweight)
+!database/schema.sql
+!database/sample-data.sql
+
+##########################
+# SENSITIVE FILES
+##########################
+
+# Configuration with Secrets
+Web.config
+appsettings.json
+appsettings.*.json
+*.env
+*.env.*
+
+# Connection Strings
+connectionStrings.config
+
+# KEEP TEMPLATE FILES:
+!Web.config.example
+!appsettings.example.json
+!environment.ts.example
+
+##########################
+# SYSTEM FILES
+##########################
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+##########################
+# LOGS & TEMPORARY FILES
+##########################
+
+*.log
+*.tmp
+*.temp
+*.txt.bak
+*-log.txt
+database-restore-log.txt
+setup-output.txt
+
+##########################
+# BUILD SCRIPTS (Personal)
+##########################
+
+# Personal batch files
+START-ALL.bat
+STOP-ALL.bat
+1-CreateBackup.bat
+2-RestoreLocal.bat
+3-UpdateWebConfig.bat
+AUTO-RESTORE-DATABASE.bat
+Start-IISExpress.bat
+Stop-IISExpress.bat
+STATUS-AND-NEXT-STEPS.bat
+
+# PowerShell Scripts (Local Setup Only)
+Backup-Database.ps1
+Extract-DatabaseSchema.ps1
+Generate-CompleteDatabase.ps1
+
+##########################
+# SETUP GUIDES (Personal)
+##########################
+
+COMPLETE-SETUP-GUIDE.txt
+FINAL-DATABASE-RESTORE.txt
+RESTORE-DATABASE-GUIDE.txt
+
+# List files
+procedures-list.txt
+remote-procedures-list.txt
+remote-tables-list.txt
+tables.txt
+test-procedure.txt
+
+##########################
+# TEST DATA
+##########################
+
+# Don't upload test data with PHI
+test-data/
+sample-patients.sql
+
+# Keep safe test templates
+!database/sample-data-template.sql
+
+##########################
+# DOCUMENTATION (Keep old README)
+##########################
+
+# Old README (we have new one)
+README.md
+
+# Keep new documentation
+!README-NEW.md
+!PROJECT-DOCUMENTATION.md
+!CALCULATION-LOGIC.md
+!GITHUB-SETUP-GUIDE.md
+!DEPLOYMENT-GUIDE.md

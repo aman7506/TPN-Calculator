@@ -1,0 +1,175 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TNS_Calculations.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NICU - Application</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #1e293b;
+            width: 250px;
+            color: white;
+            position: fixed;
+            display: flex; /* Enable flexbox for the sidebar */
+            flex-direction: column; /* Arrange items vertically */
+        }
+
+        .sidebar .logo {
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar .logo img {
+            height: 60px;
+        }
+
+        .sidebar .username {
+            text-align: center;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar .nav-link {
+            color: #cbd5e1;
+            padding: 12px 20px;
+            display: block; /* Make each link take full width */
+            text-decoration: none; /* Remove default link underline */
+        }
+
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover {
+            background-color: #334155;
+            color: #ffffff;
+            border-radius: 8px;
+        }
+
+        .logout-button-sidebar {
+            background: none;
+            border: none;
+            color: #cbd5e1;
+            cursor: pointer;
+            padding: 12px 20px;
+            display: block;
+            text-align: left; /* Align text to the left like other links */
+            font-weight: bold; /* Make the text bold */
+            text-decoration: none;
+            margin-top: auto; /* Push to the bottom of the sidebar */
+        }
+
+        .logout-button-sidebar:hover {
+            background-color: #334155;
+            color: #ffffff;
+            border-radius: 8px;
+        }
+
+        .topbar {
+            margin-left: 250px;
+            padding: 1rem 2rem;
+            background-color: #0084ff;
+            color: white;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                flex-direction: row; /* Adjust for smaller screens if needed */
+            }
+
+            .topbar, .main-content {
+                margin-left: 0;
+            }
+
+            .logout-button-sidebar {
+                /* Adjust styles for smaller screens if necessary */
+                margin-top: 0; /* Reset margin-top */
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="sidebar d-flex flex-column p-3">
+            <div class="logo">
+                <img src="Image/logo.png" alt="Hospital Logo" />
+<%--                <div class="username">User:Karmjeet</div>--%>
+            </div>
+
+            <nav class="nav flex-column mt-4">
+                <a class="nav-link active" href="#"><i class="fas fa-home me-2"></i>Home</a>
+ <a class="nav-link" href="TransactionPage.aspx"><i class="fas fa-bolt me-2"></i>Transaction</a>
+
+<%--                <a class="nav-link" href="#"><i class="fas fa-calendar-alt me-2"></i>Schedule Checklist</a>--%>
+
+      <%--          <hr class="text-secondary" />
+                <div class="text-uppercase small text-muted ps-3">Masters</div>
+                <a class="nav-link" href="#"><i class="fas fa-user-cog me-2"></i>User Master</a>
+                <a class="nav-link" href="#"><i class="fas fa-cogs me-2"></i>Checklist Type</a>
+                <a class="nav-link" href="#"><i class="fas fa-tools me-2"></i>Checklist Master</a>--%>
+            </nav>
+
+            <asp:Button ID="btnLogout" runat="server" Text="Logout"
+                CssClass="logout-button-sidebar" OnClick="btnLogout_Click" />
+        </div>
+
+        <header class="topbar d-flex justify-content-between align-items-center">
+               <div class="container mt-3">
+           <div class="hospital-header text-white text-center d-flex align-items-center justify-content-between px-4 py-2">
+               <img src="Image/logo.png" alt="Left Logo" style="height: 60px;" />
+               
+               <div class="flex-grow-1 mx-3">
+                   <h4 class="mb-0 fw-bold">SRI BALAJI ACTION MEDICAL INSTITUTE</h4>
+                   <small class="d-block">A - 4, Paschim Vihar, <strong>New Delhi</strong> - 110063</small>
+               </div>
+
+               <img src="Image/nabh.png" alt="Right Logo" style="height: 60px;" />
+           </div>
+       </div>
+            <%-- <div>
+                <img src="images/logo-right.png" style="height: 50px;" />
+            </div> --%>
+        </header>
+
+        <main class="main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#checklistTable').DataTable();
+        });
+    </script>
+</body>
+</html>
